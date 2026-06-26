@@ -7,7 +7,7 @@ export const profileData = {
   longBio: "My approach is simple: understand the problem deeply, architect it cleanly, and build it to last. I care about performance, maintainability, and the experience of everyone who touches the software — users and engineers alike.",
   email: 'prabinakumardas08@gmail.com',
   phone: '9040567146',
-  profileImage: '/Profile_Pic.png',
+  profileImage: '/Profile_pic.png',
 };
 
 export const stats = [
