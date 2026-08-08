@@ -3,8 +3,11 @@
 import { profileData } from '@/data';
 import { motion } from 'framer-motion';
 import { IconMapPin, IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function About() {
+  const { theme } = useTheme();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,7 +29,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="relative min-h-screen bg-white px-4 py-20 sm:px-8 md:px-12 lg:px-16">
+    <section id="about" className="relative min-h-screen bg-white dark:bg-[#0a0a0a] px-4 py-20 sm:px-8 md:px-12 lg:px-16 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
@@ -48,17 +51,17 @@ export default function About() {
             {/* Heading */}
             <motion.h2
               variants={itemVariants}
-              className="text-5xl sm:text-6xl md:text-6xl font-bold text-black leading-tight"
+              className="text-5xl sm:text-6xl md:text-6xl font-bold text-black dark:text-white leading-tight transition-colors duration-300"
             >
               Full Stack Developer with Real-time Expertise
             </motion.h2>
 
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <p className="text-base sm:text-lg font-light text-gray-700 leading-relaxed">
+              <p className="text-base sm:text-lg font-light text-gray-700 dark:text-neutral-300 leading-relaxed transition-colors duration-300">
                 {profileData.bio}
               </p>
-              <p className="text-base sm:text-lg font-light text-gray-700 leading-relaxed">
+              <p className="text-base sm:text-lg font-light text-gray-700 dark:text-neutral-300 leading-relaxed transition-colors duration-300">
                 {profileData.longBio}
               </p>
             </motion.div>
@@ -66,9 +69,9 @@ export default function About() {
             {/* Expertise Grid */}
             <motion.div
               variants={itemVariants}
-              className="space-y-6 pt-8 border-t border-gray-200"
+              className="space-y-6 pt-8 border-t border-gray-200 dark:border-neutral-900 transition-colors duration-300"
             >
-              <h3 className="text-lg font-semibold text-black">
+              <h3 className="text-lg font-semibold text-black dark:text-white transition-colors">
                 Core Expertise
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -86,10 +89,10 @@ export default function About() {
                     whileHover={{ x: 6 }}
                     className="space-y-1 cursor-default"
                   >
-                    <p className="font-semibold text-black text-sm">
+                    <p className="font-semibold text-black dark:text-white text-sm transition-colors">
                       ✓ {item.title}
                     </p>
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-gray-600 dark:text-neutral-400 transition-colors">
                       {item.desc}
                     </p>
                   </motion.div>
@@ -104,7 +107,7 @@ export default function About() {
             >
               <a
                 href={`mailto:${profileData.email}`}
-                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm hover:border-black hover:bg-gray-50 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-neutral-850 rounded-lg text-sm text-gray-800 dark:text-neutral-300 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-neutral-900 transition-all duration-300"
               >
                 <IconMail size={16} />
                 Email
@@ -113,7 +116,7 @@ export default function About() {
                 href={profileData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center  gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm hover:border-black hover:bg-gray-50 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-neutral-850 rounded-lg text-sm text-gray-800 dark:text-neutral-300 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-neutral-900 transition-all duration-300"
               >
                 <IconBrandGithub size={16} />
                 GitHub
@@ -122,7 +125,7 @@ export default function About() {
                 href={profileData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm hover:border-black hover:bg-gray-50 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-neutral-850 rounded-lg text-sm text-gray-800 dark:text-neutral-300 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-neutral-900 transition-all duration-300"
               >
                 <IconBrandLinkedin size={16} />
                 LinkedIn
@@ -142,12 +145,12 @@ export default function About() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl h-[450px] sm:h-[550px]"
+              className="relative rounded-2xl overflow-hidden border border-gray-200 dark:border-neutral-900 shadow-xl h-[450px] sm:h-[550px] transition-colors duration-300"
             >
               <img
                 src={profileData.profileImage}
                 alt={profileData.name}
-                className="w-full  object-cover object-center"
+                className="w-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
@@ -158,12 +161,12 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl border border-gray-200 shadow-lg"
+              className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-neutral-950 rounded-xl border border-gray-200 dark:border-neutral-900 shadow-lg transition-colors duration-300"
             >
-              <IconMapPin size={20} className="text-black flex-shrink-0" />
+              <IconMapPin size={20} className="text-black dark:text-white flex-shrink-0 transition-colors" />
               <div>
-                <p className="font-semibold text-black text-sm">Based in</p>
-                <p className="text-xs text-gray-600">
+                <p className="font-semibold text-black dark:text-white text-sm transition-colors">Based in</p>
+                <p className="text-xs text-gray-600 dark:text-neutral-400 transition-colors">
                   {profileData.location}
                 </p>
               </div>
@@ -187,12 +190,12 @@ export default function About() {
                   key={idx}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -3 }}
-                  className="p-3 rounded-lg border border-gray-200 text-center cursor-default hover:border-black hover:bg-gray-50 transition-all"
+                  className="p-3 rounded-lg border border-gray-200 dark:border-neutral-900 text-center cursor-default hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-neutral-900 transition-all duration-300"
                 >
-                  <p className="text-2xl font-bold text-black">
+                  <p className="text-2xl font-bold text-black dark:text-white transition-colors">
                     {stat.num}
                   </p>
-                  <p className="text-xs text-gray-600 mt-1">
+                  <p className="text-xs text-gray-600 dark:text-neutral-400 mt-1 transition-colors">
                     {stat.label}
                   </p>
                 </motion.div>

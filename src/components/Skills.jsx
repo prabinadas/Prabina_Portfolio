@@ -2,15 +2,17 @@
 
 import { skillsData } from '@/data';
 import { motion } from 'framer-motion';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function Skills() {
+  const { theme } = useTheme();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
       },
     },
   };
@@ -20,12 +22,12 @@ export default function Skills() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
   const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.9 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -34,7 +36,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="relative min-h-screen bg-white px-4 py-20 sm:px-8 md:px-12 lg:px-16">
+    <section id="skills" className="relative min-h-screen bg-white dark:bg-[#0a0a0a] px-4 py-20 sm:px-8 md:px-12 lg:px-16 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         {/* Premium Header */}
         <motion.div
@@ -59,7 +61,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black mb-6"
+            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black dark:text-white mb-6 transition-colors duration-300"
           >
             The full stack,<br className="hidden sm:block" />
             top to bottom.
@@ -70,7 +72,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-base sm:text-lg font-light text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg font-light text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed transition-colors duration-300"
           >
             Every technology chosen for a reason — not for the resume, but because it solves the problem best.
           </motion.p>
@@ -93,7 +95,7 @@ export default function Skills() {
               {/* Category Title */}
               <motion.h3
                 variants={categoryVariants}
-                className="text-sm font-bold uppercase tracking-widest text-gray-700 border-b-2 border-black pb-3"
+                className="text-sm font-bold uppercase tracking-widest text-gray-700 dark:text-neutral-350 border-b-2 border-black dark:border-white pb-3 transition-colors duration-300"
               >
                 {skillGroup.category}
               </motion.h3>
@@ -114,14 +116,14 @@ export default function Skills() {
                       scale: 1.08,
                       y: -5,
                       boxShadow: '0 12px 24px rgba(0,0,0,0.12)',
-                      borderColor: '#000',
+                      borderColor: theme === 'dark' ? '#fff' : '#000',
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-5 py-2.5 rounded-xl border-2 border-gray-300 bg-white text-sm font-light text-gray-800 hover:border-black hover:text-black transition-all duration-300 cursor-default relative group"
+                    className="px-5 py-2.5 rounded-xl border-2 border-gray-300 dark:border-neutral-850 bg-white dark:bg-neutral-950 text-sm font-light text-gray-800 dark:text-neutral-300 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-all duration-300 cursor-default relative group"
                   >
                     {/* Hover Background */}
                     <motion.div
-                      className="absolute inset-0 bg-gray-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                      className="absolute inset-0 bg-gray-50 dark:bg-neutral-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
                     ></motion.div>
 
                     {/* Skill Text */}
@@ -150,7 +152,7 @@ export default function Skills() {
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="h-px bg-gray-200 my-20"
+          className="h-px bg-gray-200 dark:bg-neutral-900 my-20 transition-colors duration-300"
         ></motion.div>
 
         {/* Summary Stats Grid */}
@@ -163,7 +165,7 @@ export default function Skills() {
         >
           <motion.h3
             variants={categoryVariants}
-            className="text-center text-xl font-semibold text-black"
+            className="text-center text-xl font-semibold text-black dark:text-white transition-colors duration-300"
           >
             Complete Coverage Across All Categories
           </motion.h3>
@@ -189,15 +191,15 @@ export default function Skills() {
                 whileHover={{
                   scale: 1.08,
                   y: -5,
-                  borderColor: '#000',
+                  borderColor: theme === 'dark' ? '#fff' : '#000',
                   boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                 }}
-                className="p-4 rounded-2xl border-2 border-gray-200 bg-white text-center group hover:border-black transition-all duration-300"
+                className="p-4 rounded-2xl border-2 border-gray-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 text-center group hover:border-black dark:hover:border-white transition-all duration-300"
               >
-                <p className="text-3xl sm:text-4xl font-bold text-black group-hover:scale-110 transition-transform duration-300">
+                <p className="text-3xl sm:text-4xl font-bold text-black dark:text-white group-hover:scale-110 transition-colors transition-transform duration-300">
                   {item.num}
                 </p>
-                <p className="text-xs text-gray-600 mt-2 group-hover:text-black transition-colors duration-300">
+                <p className="text-xs text-gray-600 dark:text-neutral-400 mt-2 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                   {item.label}
                 </p>
               </motion.div>
@@ -213,8 +215,8 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <p className="text-base sm:text-lg font-light text-gray-600">
-            Every tool has been used in <span className="font-semibold text-black">production applications</span> with real users and clients.
+          <p className="text-base sm:text-lg font-light text-gray-600 dark:text-neutral-400">
+            Every tool has been used in <span className="font-semibold text-black dark:text-white transition-colors duration-300">production applications</span> with real users and clients.
           </p>
         </motion.div>
       </div>

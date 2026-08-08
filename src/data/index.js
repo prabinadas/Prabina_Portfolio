@@ -1,6 +1,6 @@
 export const profileData = {
   name: 'Prabina Kumar Das',
-  title: 'Full Stack Freelancer',
+  title: 'Full Stack Developer',
   subtitle: 'MERN Stack Specialist | Real-Time Systems',
   location: 'Bhubaneswar, Odisha',
   bio: "I'm a Full Stack Developer passionate about building scalable web applications. Specialized in MERN stack with real-time socket.io implementations. Currently available for new projects.",

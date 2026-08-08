@@ -58,7 +58,10 @@ body {
 }
 
 .delay-6 {
-  transiit-scrollbar {
+  transition-delay: 600ms;
+}
+
+::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -74,4 +77,15 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #a3a3a3;
 }
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #262626;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #404040;
 }

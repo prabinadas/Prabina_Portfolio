@@ -14,7 +14,7 @@ export default function Home() {
   useReveal();
 
   return (
-    <>
+    <div className="min-h-screen w-full bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
       <Navbar />
       <Hero />
       <About />
@@ -23,6 +23,6 @@ export default function Home() {
       <Experience />
       <Services />
       <Contact />
-    </>
+    </div>
   );
 }
