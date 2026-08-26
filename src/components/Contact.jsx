@@ -274,6 +274,7 @@ export default function Contact() {
     {
       icon: IconFileCv,
       label: 'Resume',
+      
       value: 'Download CV',
       href: '#',
     },
