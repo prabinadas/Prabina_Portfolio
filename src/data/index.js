@@ -190,7 +190,7 @@ export const contactInfo = {
   location: 'Bhubaneswar, Odisha, India',
   github: 'https://github.com/prabinadas',
   linkedin: 'https://www.linkedin.com/in/prabinadas/',
-  resume: '/https://drive.google.com/file/d/1qNVgNUp62vMA8qEpbJfGKRTDAUt2Ekrb/view?usp=drive_link',
+  resume: 'https://drive.google.com/file/d/1qNVgNUp62vMA8qEpbJfGKRTDAUt2Ekrb/view?usp=drive_link',
 };
 
 export const testimonials = [
