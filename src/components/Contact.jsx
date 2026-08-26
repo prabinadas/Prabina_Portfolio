@@ -276,6 +276,7 @@ export default function Contact() {
       label: 'Resume',
       value: 'Download CV',
       href: contactInfo.resume,
+      target:'_blank'
     },
   ];
 
