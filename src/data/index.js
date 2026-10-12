@@ -99,7 +99,7 @@ export const projectsData = [
     description: 'An AI-powered voice assistant that allows users to interact with any website using voice commands. It converts spoken language into text, processes user queries using Google Gemini AI, and responds with natural-sounding speech. Built with the MERN stack, the assistant enables hands-free interaction and helps users perform website actions through voice commands.',
     longDescription: 'AI Voice Assistant for Any Website is an intelligent web application designed to provide voice-based interaction and AI-powered assistance. Users can speak naturally, and the system captures their voice using speech recognition, processes the input with Google Gemini AI, and delivers responses using browser text-to-speech technology. The application uses React.js to build an interactive frontend and Node.js with Express.js to handle backend APIs and AI integration. MongoDB can be used to store conversation history and user data. Features include real-time voice input, natural language understanding, AI-generated responses, text-to-speech output, and voice-command-based website interaction.',
     technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Google Gemini AI', 'Web Speech API'],
-    image: '/projects/AI_assistant.png',
+    image: '/projects/AI_assistant.jpg',
     liveLink: 'https://ai-voice-ass-client.onrender.com/',
     githubLink: 'error',
     status: 'Deployed',

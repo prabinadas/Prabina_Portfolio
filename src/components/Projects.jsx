@@ -98,27 +98,27 @@ export default function Projects() {
                       <div className="absolute inset-0 bg-black/10 dark:bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
                     </div>
                   ) : project.id === 2 ? (
-                  // Project 2 Image
-                  <div className="relative w-full h-full overflow-hidden">
-                    <motion.img
-                      src="/AI_assistant.png"
-                      alt={project.title}
-                      className="w-full h-full object-cover object-center"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.4 }}
-                    />
-                  </div>
+
+                    <div className="relative w-full h-full overflow-hidden">
+                      <motion.img
+                        src="/AI_assistant.png"
+                        alt={project.title}
+                        className="w-full h-full object-cover object-center"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.4 }}
+                      />
+                    </div>
                   ) : (
-                  <div className="text-center">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                      className="w-20 h-20 rounded-full border-3 border-gray-300 dark:border-neutral-800 flex items-center justify-center mx-auto mb-4 transition-colors duration-300"
-                    >
-                      <span className="text-3xl font-bold text-gray-400 dark:text-neutral-600">{project.id}</span>
-                    </motion.div>
-                    <p className="text-sm font-light text-gray-500 dark:text-neutral-500">{project.title}</p>
-                  </div>
+                    <div className="text-center">
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                        className="w-20 h-20 rounded-full border-3 border-gray-300 dark:border-neutral-800 flex items-center justify-center mx-auto mb-4 transition-colors duration-300"
+                      >
+                        <span className="text-3xl font-bold text-gray-400 dark:text-neutral-600">{project.id}</span>
+                      </motion.div>
+                      <p className="text-sm font-light text-gray-500 dark:text-neutral-500">{project.title}</p>
+                    </div>
                   )}
                 </motion.div>
 
@@ -134,8 +134,8 @@ export default function Projects() {
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                         className={`text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full border transition-all duration-300 ${project.status === 'Deployed'
-                            ? 'bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-900/30'
-                            : 'bg-blue-50 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-900/30'
+                          ? 'bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-900/30'
+                          : 'bg-blue-50 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-900/30'
                           }`}
                       >
                         {project.status}
